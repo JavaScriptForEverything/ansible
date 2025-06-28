@@ -154,11 +154,6 @@ $ ansible all -i hosts -m ping
 ```
 
 
-Get IPs
-
-docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' ubuntu-node
-docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' rocky-node
-
 
 
 ## Docker compose Setup
