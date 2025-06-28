@@ -1,0 +1,13 @@
+# Dockerfile.rocky
+FROM rockylinux:9
+
+RUN dnf install -y openssh-server sudo python3 python3-pip && \
+    ssh-keygen -A && \
+    mkdir /run/sshd
+
+RUN useradd -m ansible -s /bin/bash && \
+    echo 'ansible:password' | chpasswd && \
+    echo 'ansible ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+
+EXPOSE 22
+CMD ["/usr/sbin/sshd", "-D"]

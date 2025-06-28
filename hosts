@@ -1,0 +1,35 @@
+
+localhost:2222 		# For Ubuntu : shortform
+localhost:2223 		# For Rocky
+
+[ubuntu]
+ubuntu_svc ansible_host=localhost ansible_port=2222 			# Long Form
+
+[rocky]
+rocky_svc ansible_host=localhost ansible_port=2223
+
+[all:vars]
+ansible_user=ansible
+ansible_password=password
+ansible_connection=ssh
+ansible_python_interpreter=/usr/bin/python3
+
+
+
+
+# [ubuntu]
+# ubuntu_svc ansible_host=localhost ansible_port=2222
+#
+# [rocky]
+# rocky_svc ansible_host=localhost ansible_port=2223
+#
+# [all:vars]
+# ansible_user=ansible
+# ansible_password=password
+# ansible_connection=ssh
+# ansible_python_interpreter=/usr/bin/python3
+
+
+
+
+#

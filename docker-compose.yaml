@@ -1,0 +1,30 @@
+services:
+  ubuntu_svc:
+    build:
+      context: .
+      dockerfile: Dockerfile.ubuntu
+    image: ansible_ubuntu
+    container_name: ubuntu_container
+    ports:
+      - "2222:22"
+    restart: always
+    networks:
+      - ansible-lab
+
+  rocky_svc:
+    build:
+      context: .
+      dockerfile: Dockerfile.rocky
+    image: ansible_rocky
+    container_name: rocky_container
+    ports:
+      - "2223:22"
+    restart: always
+    networks:
+      - ansible-lab
+
+networks:
+  ansible-lab:
+    driver: bridge
+
+
